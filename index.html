@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Bestie 💖</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ffd6e7,#fff1f7);color:#5b2945;text-align:center}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:25px}
+.card{width:100%;max-width:430px;background:#ffffffdd;border-radius:28px;padding:30px 22px;box-shadow:0 10px 35px #0002}
+h1{font-size:34px;margin:10px 0;color:#d64f82}
+h2{color:#d64f82}
+input{width:100%;padding:15px;border:1px solid #f0b6cb;border-radius:15px;font-size:18px;text-align:center}
+button{margin-top:15px;padding:14px 28px;border:0;border-radius:25px;background:#d95786;color:white;font-size:17px}
+.hidden{display:none}
+.photo{width:100%;max-height:350px;object-fit:cover;border-radius:22px;margin:15px 0}
+.note{line-height:1.7;text-align:left;background:#fff5f9;padding:20px;border-radius:20px}
+.heart{font-size:45px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+<div class="card" id="login">
+<div class="heart">💖</div>
+<h1>Happy Birthday Bestie</h1>
+<p>Ek chhota sa surprise tumhare liye 🎁</p>
+<input id="password" type="password" placeholder="Enter Password">
+<button onclick="unlock()">Open Surprise 💕</button>
+<p id="error"></p>
+</div>
+
+<div class="card hidden" id="surprise">
+<div class="heart">🎂💖🎉</div>
+<h1>Happy Birthday Bestie!</h1>
+
+<p>Today is all about you ✨</p>
+
+<!-- Yahan baad me photo add karenge -->
+<div style="font-size:100px">📸</div>
+
+<h2>Special Note 💌</h2>
+<div class="note">
+<p><b>Happy Birthday, Bestie! ❤️</b></p>
+<p>
+Tumhari smile hamesha aise hi beautiful rahe.
+Tumhari life happiness, love aur success se bhari rahe.
+Har naya din tumhare liye ek beautiful memory lekar aaye.
+</p>
+<p>
+Thank you for being such a special person.
+Hamesha khush rehna aur aise hi smile karte rehna. 💕
+</p>
+<p style="text-align:center"><b>Once again, Happy Birthday Bestie! 🎂💖</b></p>
+</div>
+
+<button onclick="showVideo()">🎬 Birthday Video</button>
+<div id="video" class="hidden">
+<p>Video yahan add hoga ❤️</p>
+</div>
+
+</div>
+</div>
+
+<script>
+function unlock(){
+  const p=document.getElementById("password").value;
+  if(p==="2012"){
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("surprise").classList.remove("hidden");
+  }else{
+    document.getElementById("error").innerText="Wrong password 💔";
+  }
+}
+function showVideo(){
+  document.getElementById("video").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
